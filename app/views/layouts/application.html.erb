@@ -1,14 +1,29 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>SampleApp | <%= @titre %></title>
+    <title><%= titre %></title>
     <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= render 'layouts/stylesheets'%>
+    <%= stylesheet_link_tag 'screen', media: 'screen' %>
+    <%= stylesheet_link_tag 'print', media: 'print' %>
+    <%= stylesheet_link_tag 'style', media: 'screen' %>
   </head>
 
   <body>
-    <%= yield %>
+   <div class="container">
+      <header>
+        <%= image_tag "logo.png", :alt => "Application Exemple", :class => "round" %>
+        <nav class="round">
+          <ul>
+            <li><%= link_to "Accueil", '#' %></li>
+            <li><%= link_to "Aide", '#' %></li>
+            <li><%= link_to "Inscription", '#' %></li>
+          </ul>
+        </nav>
+      </header>
+      <section class="round">
+        <%= yield %>
+      </section>
+    </div>
   </body>
 </html>
