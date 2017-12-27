@@ -1,0 +1,17 @@
+<% if @user.errors.any? %>
+<div>
+	<h2> 
+		<%= pluralize(@user.errors.count, "erreur") %>	
+		ont empêché d'enregistrer votre inscription
+	</h2>
+	<ul>
+		<% @user.errors.to_hash.each do |key,error| %>
+			<% error.each do |msg| %>
+				<li>
+					<%= msg %>
+				</li>
+			<% end %>
+		<% end %>
+	</ul>
+</div>
+<% end %>
