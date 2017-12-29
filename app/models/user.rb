@@ -29,10 +29,10 @@ class User < ApplicationRecord
 		self.encrypted_password == encrypt(passwordSoumis)
 	end
 
-	def self.authentifier(email,passwordSoumis)
-		user = self.find_by_email(email)
+	def self.authentifier(userPresume = {email: "", password: ""})
+		user = self.find_by_email(userPresume[:email])
 		return nil if user.nil?
-		return user if user.hasPassword?(passwordSoumis)
+		return user if user.hasPassword?(userPresume[:password])
 	end
 
 	private

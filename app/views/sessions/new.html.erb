@@ -1,0 +1,22 @@
+<h1>Identification</h1>
+<% if flash[:error] %>
+	<div>
+		<%= flash[:error] %>
+	</div>
+<% end %>
+<%= form_for(:session, url: app_signin_path) do |f| %>
+	<div class="field">
+		<%= f.label :email, "email" %> <br>
+		<%= f.text_field :email %>
+	</div>
+	<div class="field">
+		<%= f.label :password, "Mot de passe" %> <br>
+		<%= f.password_field :password %>
+	</div>
+	<div class="actions">
+		<%= f.submit "Se connecter" %>
+	</div>
+<% end %>
+<p>
+	Pas encore inscrit? <%= link_to "s'inscrire", app_signup_path %>
+</p>
