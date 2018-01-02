@@ -34,6 +34,10 @@ class User < ApplicationRecord
 		return nil if user.nil?
 		return user if user.hasPassword?(userPresume[:password])
 	end
+	def self.authentifier_par_salt(id,cookie_salt)
+		user = User.find_by_id(id)
+		(user && user.salt == cookie_salt) ? user : nil 
+	end
 
 	private
 		def encrypt_password

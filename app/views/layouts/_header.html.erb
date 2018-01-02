@@ -4,8 +4,13 @@
  		<ul>
  		<li><%= link_to "Accueil", app_home_path %></li>
  			<li><%= link_to "Aide", app_help_path %></li>
- 			<li><%= link_to "Connexion", app_signin_path %></li>
- 			<li><%= link_to "Inscription", app_signup_path %></li>
+ 			<% if signed_in? %>
+ 				<li><%= link_to "deconnexion", app_signout_path %></li>
+ 			<% else %>
+ 				<li><%= link_to "connexion", app_signin_path %></li>
+ 				<li><%= link_to "Inscription", app_signup_path %></li>
+ 			<% end %>
+ 			
  		</ul>
  	</nav>
  </header>

@@ -6,8 +6,8 @@ Rails.application.routes.draw do
   get 'pages/help' => 'pages#help' , as: :app_help
   get 'signup' => 'users#new' , as: :app_signup
   resources :users
-  get 'signin' => 'sessions#new'
-  delete 'signout' => 'sessions#destroy'
-  post 'signin' => 'sessions#create', as: :app_signin
+  get 'signin' => 'sessions#new', as: :app_signin
+  get 'signout' => 'sessions#destroy', as: :app_signout
+  post 'signin' => 'sessions#create'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
