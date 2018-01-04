@@ -5,6 +5,8 @@
  		<li><%= link_to "Accueil", app_home_path %></li>
  			<li><%= link_to "Aide", app_help_path %></li>
  			<% if signed_in? %>
+ 				<li><%= link_to "profil", current_user %></li>
+ 				<li><%= link_to "utilisateurs", users_path %></li>
  				<li><%= link_to "deconnexion", app_signout_path %></li>
  			<% else %>
  				<li><%= link_to "connexion", app_signin_path %></li>

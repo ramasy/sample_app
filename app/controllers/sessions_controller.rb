@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
   		redirect_to app_signin_path
   	else
       sign_in user
-  		redirect_to user
+  		back_to_url_or user
   	end
   end
 

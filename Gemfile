@@ -32,6 +32,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'gravatar_image_tag'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+gem 'kaminari'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -44,6 +45,7 @@ group :development, :test do
   gem 'webrat', '0.7.3'
   gem 'sqlite3'
   gem 'annotate', '2.7.2'
+  gem 'faker', '0.3.1'
 end
 
 group :development do

@@ -1,0 +1,21 @@
+<h1>Listes des utilisateurs</h1>
+<% if flash[:success] %>
+  <div class="flash-info round">
+    <%= flash[:success] %>
+  </div>
+<% end %>
+<p class="my-pagination">
+	<%= paginate @users %>
+</p>
+<ul class="users">
+	<% @users.each do |user| %>
+		<li>
+			<%= gravatar_for user,38 %>
+			<%= link_to user.nom, user %>
+			<% if current_user.admin? and current_user != user %>
+				| <%= link_to 'supprimer', user, method: :delete, confirm: "êtes vous certains?", title: "supprimer #{user.nom}" %>
+			<% end %>
+		</li>
+	<% end %>
+</ul>
+<%= paginate @users %>

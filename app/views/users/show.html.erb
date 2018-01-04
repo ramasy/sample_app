@@ -7,13 +7,16 @@
   <tr>
     <td class="main">
       <h1>
-        <%= gravatar_for current_user %>
-        <%= current_user.nom %>
+        <%= gravatar_for @user %>
+        <%= @user.nom %>
       </h1>
     </td>
     <td class="sidebar round">
-      <strong>Nom</strong> <%= current_user.nom %><br />
-      <strong>URL</strong>  <%= link_to user_path(current_user), current_user %>
+      <strong>Nom</strong> <%= @user.nom %><br />
+      <strong>URL</strong>  <%= link_to user_path(@user), @user %> <br>
+      <strong>email</strong>  <%= @user.email %> <br>
+      <%= link_to "Modifier", edit_user_url(@user) %>
+
     </td>
   </tr>
 </table>

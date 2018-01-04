@@ -4,6 +4,13 @@
 		<%= flash[:error] %>
 	</div>
 <% end %>
+
+<% if flash[:notice] %>
+  <div class="flash-info round">
+    <%= flash[:notice] %>
+  </div>
+<% end %>
+
 <%= form_for(:session, url: app_signin_path) do |f| %>
 	<div class="field">
 		<%= f.label :email, "email" %> <br>
