@@ -16,6 +16,7 @@ class UsersController < ApplicationController
   def show 	
   	@user = User.find(params[:id])
   	@titre = @user.nom
+    @microposts = @user.microposts.page(params[:page]).per(20)
   end
 
   def create
@@ -48,10 +49,6 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:nom,:email,:password,:password_confirmation)
-  end
-
-  def authentifier
-    deny_access unless signed_in?
   end
 
   def autoriser

@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get 'pages/help' => 'pages#help' , as: :app_help
   get 'signup' => 'users#new' , as: :app_signup
   resources :users
+  resources :microposts, only: [:create, :destroy]
   get 'signin' => 'sessions#new', as: :app_signin
   get 'signout' => 'sessions#destroy', as: :app_signout
   post 'signin' => 'sessions#create'

@@ -49,4 +49,7 @@ module SessionsHelper
 		redirect_to url || default
 	end
 
+	def authentifier
+    	deny_access unless signed_in?
+  	end
 end
