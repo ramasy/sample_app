@@ -9,7 +9,7 @@ class MicropostsController < ApplicationController
   			@titre = "home"
   			# Rails.logger.info("----------------->#{root_path}")
   			# Rails.logger.info("+++++++++++++++++>#{app_home_path}")
-  			redirect_to request.url
+  			redirect_to root_path
   		end
   	end
 
