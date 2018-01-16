@@ -6,16 +6,4 @@
 	<div>
 		<%= f.submit "Poster" %>
 	</div>
-  <script>
-      var limit = 140;
-    $("#message").keyup(function () {
-        var message = $("#message").val().length;
-        var reste = limit - message;
-        $("#reste").text(reste)
-        if (reste < 0) {
-            $("#reste").text("limit reached")
-        }
-    });
-
-  </script>
 <% end %>

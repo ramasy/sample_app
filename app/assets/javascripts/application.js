@@ -10,7 +10,18 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require rails-ujs
+//= require jquery3
+//= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+var limit = 140;
+$("#message").keyup(function () {
+    var message = $("#message").val().length;
+    var reste = limit - message;
+    $("#reste").text(reste)
+    if (reste < 0) {
+        $("#reste").text("limit reached")
+    }
+});
 

@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get 'pages/about' => 'pages#about' , as: :app_about
   get 'pages/contact' => 'pages#contact' , as: :app_contact
   get 'pages/help' => 'pages#help' , as: :app_help
+  post 'pages/help' => 'pages#upload'
   get 'signup' => 'users#new' , as: :app_signup
   resources :users
   resources :microposts, only: [:create, :destroy]

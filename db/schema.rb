@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 20180104090515) do
 
-  create_table "microposts", force: :cascade do |t|
+  create_table "microposts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "content"
     t.integer "user_id"
     t.datetime "created_at", null: false
@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 20180104090515) do
     t.index ["user_id"], name: "index_microposts_on_user_id"
   end
 
-  create_table "users", force: :cascade do |t|
+  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "nom"
     t.string "email"
     t.datetime "created_at", null: false
